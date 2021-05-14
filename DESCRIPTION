@@ -1,0 +1,10 @@
+Imports: 
+    tidymodels,
+    tidyverse,
+    xaringanExtra,
+    here,
+    pagedown,
+    palmerpenguins,
+    distillcourse
+Remotes:
+    EmilHvitfeldt/distillcourse
