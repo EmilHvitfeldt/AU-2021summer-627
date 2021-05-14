@@ -17,11 +17,17 @@ navbar:
         - text: "Information"
           href: readings.html
         - text: "---"
+        - text: "Week 1 - Monday"
+          href: readings-week1-monday.html
+        - text: "Week 1 - Wednesday"
+          href: readings-week1-wednesday.html
     - text: "Labs"
       menu:
         - text: "Information"
           href: labs.html
         - text: "---"
+        - text: "Week 1 - Monday"
+          href: labs-week1-monday.html
     - text: "Assignments"
       menu:
         - text: "Information"

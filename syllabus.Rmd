@@ -35,6 +35,8 @@ This book will be required reading and we will aim to cover most of the content.
 
 "An Introduction to Statistical Learning with Applications in R" by G. James, D. Witten, T. Hastie, and R. Tibshirani; Springer, 2013. ISBN 1461471370. The latest corrected printing is available on James's page at https://statlearning.com/
 
+The lab sections of ISLR have been rewritten to use tidymodels and can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html).
+
 ## Supplementary books
 
 These books are by no means necessary to buy or read to complete this course but serve as great stepping stones for deeper study. Some week's readings will refer to these books for extra readings.

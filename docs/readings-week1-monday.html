@@ -85,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Statistical Machine Learning: Labs</title>
+  <title>Statistical Machine Learning: Week 1 - Monday</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Statistical Machine Learning: Labs"/>
+  <meta property="og:title" content="Statistical Machine Learning: Week 1 - Monday"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Statistical Machine Learning"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Statistical Machine Learning: Labs"/>
+  <meta property="twitter:title" content="Statistical Machine Learning: Week 1 - Monday"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Labs"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Week 1 - Monday"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2355,7 +2355,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Labs","authors":[]}
+{"title":"Week 1 - Monday","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2414,7 +2414,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Labs</h1>
+<h1>Week 1 - Monday</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2422,19 +2422,26 @@ Assignments
 
 
 <div class="d-article">
-<p>Each lecture will be followed by lab time which is sometimes where we will be using <a href="https://cran.r-project.org/">R</a> and <a href="https://www.tidymodels.org/">tidymodels</a> to implement the methods we will have talked about that week.</p>
-<p>Labs are to be turned in on Blackboard. labs will be available no later than 3 days before class and are due to be turned in on the following Sunday. We will be collectively be talking about the labs and come up with some of the answers. To get full credit for labs the document that is turned in should contain not just the right code to solve the problem but also text explaining what has been done.</p>
-<ul>
-<li>Don’t print raw data.frames. If you want to print part, turn it into a tibble</li>
-<li>Don’t print verbose code</li>
-</ul>
-<p>Output can be excluding by setting <code>echo=FALSE</code> in chunks.</p>
-<pre><code>&lt;div class=&quot;layout-chunk&quot; data-layout=&quot;l-body&quot;&gt;
-
-
-&lt;/div&gt;
+<p>Read chapter 2 of “An Introduction to Statistical Learning”. This is a big picture chapter that lays the foundation of the rest of the book. It is not expected to have read this before class.</p>
+<p>Chapter 1 serves as an introduction to the book, data, and notation. Can be read or skimmed through if you want.</p>
+<p>We will be using <a href="https://cran.r-project.org/">R</a> which can be downloaded <a href="https://cran.r-project.org/">here</a>. Additionally, it is also advised to use <a href="https://rstudio.com/">RStudio</a> which can be downloaded <a href="https://rstudio.com/products/rstudio/download/#download">here</a>, but any <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> will work.</p>
+<p>We will be using the <a href="https://www.tidymodels.org/">tidymodels</a> ecosystem of packages designed for modeling. If you haven’t already you should install these packages along with <a href="https://www.tidyverse.org/">tidyverse</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"tidymodels"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"tidyverse"</span><span class='op'>)</span>
 </code></pre>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+</div>
+</div>
+<p>We will also be using the developmental version of <a href="https://parsnip.tidymodels.org/">parsnip</a> which can be installed with</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#install.packages("devtools")</span>
+<span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"tidymodels/parsnip"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
