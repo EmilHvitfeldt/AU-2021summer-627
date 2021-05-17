@@ -92,7 +92,7 @@ Topics: LDA, QDA, K-Nearest Neighbors
 
 `r assignments("week3")`
 
-### Monday 6-02
+### Wednesday 6-02
 
 Topics: Bootstrap, Model Diagnostics, Evaluation Metrics, Cross Validation
 
@@ -100,7 +100,7 @@ Topics: Bootstrap, Model Diagnostics, Evaluation Metrics, Cross Validation
 
 `r labs("week3-wednesday")`
 
-### Wednesday 6-05
+### Saturday 6-05
 
 Topics: Feature Engineering, Data Preprocessing, Clustering, K-Means Clustering, Hierarchical Clustering
 
