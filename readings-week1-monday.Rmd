@@ -26,3 +26,10 @@ We will also be using the developmental version of [parsnip](https://parsnip.tid
 devtools::install_github("tidymodels/parsnip")
 ```
 
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week1-monday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week1-monday/week1-monday.pdf) [Full Screen](static/slides/week1-monday/index.html)
