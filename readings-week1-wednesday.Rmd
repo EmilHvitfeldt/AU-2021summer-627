@@ -11,3 +11,12 @@ Read chapter 3 of "An Introduction to Statistical Learning". This chapter goes o
 If you want more information on the theoretical background you can read sections 3.1 and 3.2 of "The Elements of Statistical Learning". This is optional reading.
 
 Instead of reading the lab sections of chapter 3, read [this](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/linear-regression.html) chapter instead which I rewrote to use tidymodels.
+
+
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week1-wednesday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week1-wednesday/week1-wednesday.pdf) [Full Screen](static/slides/week1-wednesday/index.html)
