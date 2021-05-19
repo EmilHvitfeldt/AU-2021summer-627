@@ -2,7 +2,7 @@
 title: "Statistical Machine Learning"
 subtitle: "AU STAT-427/627"
 author: "Emil Hvitfeldt"
-date: "2021-5-19"
+date: "2021-5-17"
 output:
   xaringan::moon_reader:
     css: ["theme.css", "default"]
