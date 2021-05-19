@@ -85,29 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Statistical Machine Learning</title>
+  <title>Statistical Machine Learning: Labs - Week 2</title>
 
-  <meta property="description" itemprop="description" content="American University 427/627"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Statistical Machine Learning"/>
+  <meta property="og:title" content="Statistical Machine Learning: Labs - Week 2"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="American University 427/627"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Statistical Machine Learning"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Statistical Machine Learning"/>
-  <meta property="twitter:description" content="American University 427/627"/>
+  <meta property="twitter:title" content="Statistical Machine Learning: Labs - Week 2"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Statistical Machine Learning"]},{"type":"character","attributes":{},"value":["American University 427/627\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","params"]}},"value":[{"type":"character","attributes":{},"value":["Labs - Week 2"]},{"type":"character","attributes":{},"value":["Simple and multiple linear regression"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["solutions"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2358,7 +2355,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Statistical Machine Learning","description":"American University 427/627","authors":[]}
+{"title":"Labs - Week 2","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2419,20 +2416,36 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Statistical Machine Learning</h1>
+<h1>Labs - Week 2</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>American University 427/627</p></p>
+
 </div>
 
 
 <div class="d-article">
-<p>This website contains most of the information and material that will be used for one of the sections of the course <a href="https://catalog.american.edu/preview_course_nopop.php?catoid=9&amp;coid=41770">Statistical Machine Learning</a> at <a href="https://www.american.edu/">American University</a>.</p>
-<p>The navigation bar contains information about the <a href="syllabus.html">syllabus</a>, <a href="schedule.html">schedule</a>, <a href="readings.html">readings</a>, <a href="labs.html">labs</a> and <a href="assignments.html">assignments</a>.</p>
-<h2 class="unnumbered" id="license">License</h2>
-<p><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />This online work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>. Visit <a href="https://github.com/EmilHvitfeldt/AU-2021spring-627">here</a> for more information about the license.</p>
-<h2 class="unnumbered" id="colophon">Colophon</h2>
-<p>This book was written in <a href="http://www.rstudio.com/ide/">RStudio</a> using <a href="https://rstudio.github.io/distill/">distill</a>. The complete source is available on <a href="">GitHub</a>. All packages versions are being handled with <a href="https://rstudio.github.io/renv/">renv</a>.</p>
+<p>These sets of labs will introduce you to linear models. Both simple and multiple. This will also be your first introduction to the <a href="https://parsnip.tidymodels.org/">parsnip</a> package which we will use to specify models.</p>
+<h3 id="exercise-1---simple-linear-regression">Exercise 1 - Simple linear regression</h3>
+<ol type="a">
+<li>Load the data <code>biomass</code> and plot <code>HHV</code> as a function of <code>carbon</code>.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"biomass"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Fit a simple linear regression model to the data. With <code>HHV</code> as the response and <code>carbon</code> as the predictor. Is it a good fit?</p></li>
+<li><p>Use the model to predict what the <code>HHV</code> of samples with <code>carbon = 10, 20, ..., 80</code>.</p></li>
+<li><p>Produce diagnostics plots. You can use <code>plot()</code> on the <code>$fit</code> object to produce some diagnostics.</p></li>
+</ol>
+<h3 id="exercise-2---multiple-linear-regression">Exercise 2 - Multiple linear regression</h3>
+<ol type="a">
+<li><p>Fit a linear regression model to the data. With <code>HHV</code> as the response and <code>carbon</code> and <code>hydrogen</code> as the predictor. How is the fit compared to the simple linear model?</p></li>
+<li><p>Fit a linear regression model to the data. With <code>HHV</code> as the response and all the molecules as the predictor. How is the fit compared to the previous models?</p></li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

@@ -28,6 +28,8 @@ navbar:
         - text: "---"
         - text: "Week 1 - Monday"
           href: labs-week1-monday.html
+        - text: "Week 1 - Wednesday"
+          href: labs-week1-wednesday.html
     - text: "Assignments"
       menu:
         - text: "Information"
