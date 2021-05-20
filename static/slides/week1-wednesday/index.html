@@ -24,6 +24,36 @@ class: center, middle, title-slide
 
 
 
+
+
+&lt;div style = "position:fixed; visibility: hidden"&gt;
+`$$\require{color}\definecolor{orange}{rgb}{1, 0.603921568627451, 0.301960784313725}$$`
+`$$\require{color}\definecolor{blue}{rgb}{0.301960784313725, 0.580392156862745, 1}$$`
+`$$\require{color}\definecolor{pink}{rgb}{0.976470588235294, 0.301960784313725, 1}$$`
+&lt;/div&gt;
+
+&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      orange: ["{\\color{orange}{#1}}", 1],
+      blue: ["{\\color{blue}{#1}}", 1],
+      pink: ["{\\color{pink}{#1}}", 1]
+    },
+    loader: {load: ['[tex]/color']},
+    tex: {packages: {'[+]': ['color']}}
+  }
+});
+&lt;/script&gt;
+
+&lt;style&gt;
+.orange {color: #FF9A4D;}
+.blue {color: #4D94FF;}
+.pink {color: #F94DFF;}
+&lt;/style&gt;
+
+
+
 .center[
 # What is statistical learning?
 ]
@@ -59,7 +89,7 @@ Quantities are defined here very broadly to be data or measurements
 
 Some machine learning methods have a statistical underpinning
 
-This allows to quantify the uncertainty
+This allows us to quantify the uncertainty
 
 Examples of "non-statistical machine learning methods" are
 
@@ -107,20 +137,20 @@ X: predictors, independent variables, features/variables
 
 # Why estimate f?
 
-If `\(f\)` is different then the null-model or monkey model.
+If `\(f\)` is different than the null-model or monkey model.
 
 - Prediction
 - Inference
 
 ---
 
-# prediction
+# Prediction
 
 Main thesis:
 
 &gt; If we can find f then we can predict the value of Y for different values of X
 
-This holds a major assumption that scenario in which we estimate `\(f\)` stays the same.
+This holds a major assumption that the scenario in which we estimate `\(f\)` stays the same.
 
 Models trained on data from a recession may not apply to data in a depression
 
@@ -148,29 +178,29 @@ https://twitter.com/topepos/status/1333967942686543873
 
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 --
 
 .pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Prediction
+
+`$$\hat{Y} = \hat{f}(X)$$`
+
+.pull-left[
 &lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
----
-
-# Prediction
-
-`$$\hat{Y} = \hat{f}(X)$$`
-
-.pull-left[
+.pull-right[
 &lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
-.pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="700px" style="display: block; margin: auto;" /&gt;
-]
-
 ---
 
 # Prediction
@@ -178,11 +208,11 @@ https://twitter.com/topepos/status/1333967942686543873
 `$$\hat{Y} = \hat{f}(X)$$`
 
 .pull-left[
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -194,7 +224,7 @@ The error is how much `\(f\)` is different from `\(\hat{f}\)`
 We split this into **reducible** and **irreducible**
 
 We will generally not be able to completely predict anything from a limited number of features  
-Any error left when when a perfect statistical model is trained is the irreducible error  
+Any error left when a perfect statistical model is trained is the irreducible error  
 
 Sub-optimal estimates of `\(\hat{f}\)` introduce error which could have been reduced.
 
@@ -229,7 +259,7 @@ Understanding how Y is related to X
 
 We want to understand the exact form
 
-"what effect will changing price affect the rating of a product?"
+"What effect will changing price affect the rating of a product?"
 
 This is inference. We are primarily interested in the effect, not the outcome
 
@@ -252,14 +282,14 @@ Certain fields will hold different weight on explainability/interpretability
 
 ---
 
-# supervised vs unsupervised learning
+# Supervised vs Unsupervised Learning
 
 Most of what we will are working on is going to be supervised.  
 The learning we are doing is based on a specific parameter Y we are working around
 
 --
 
-unsupervised learning on the other hand doesn't have a explicit goal or answer sheet
+unsupervised learning on the other hand doesn't have an explicit goal or answer sheet
 
 --
 
@@ -268,7 +298,7 @@ unsupervised learning on the other hand doesn't have a explicit goal or answer s
 
 --
 
-&gt; "here is all our costumer data, do they form groups?"
+&gt; "here is all our customer data, do they form groups?"
 
 ---
 
@@ -311,7 +341,7 @@ It appears to have a possible linear trend
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -337,7 +367,7 @@ If we take the square of all the vertical lines and sum them we get
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -361,7 +391,7 @@ With a resulting RSS of
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -375,14 +405,14 @@ since we are only receiving a sample of the underlying distribution, we are not 
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="700px" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="700px" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 
-# least square criterion
+# Least Square Criterion
 
-We are minimizing residual sum of squares (RSS)
+We are minimizing the residual sum of squares (RSS)
 
 $$
 `\begin{align}
@@ -397,15 +427,15 @@ Where `\(\bar{x}\)` and `\(\bar{y}\)` are sample means of `\(x\)` and `\(y\)`
 
 # Hypothesis tests
 
-Since this model in build on certain assumptions, we are able to calculate standard error estimates for each parameter estimate.
+Since this model is built on certain assumptions, we can calculate standard error estimates for each parameter estimate.
 
 These standard errors can be used to determine if the estimates are significantly different from 0
 
-Inverse relationship between size of effect and number of observations
+An inverse relationship between the size of effect and number of observations
 
 ---
 
-# Assessing model accuarcy
+# Assessing model accuracy
 
 How much does the model fit the data?
 
@@ -415,9 +445,9 @@ Again a measure of how far away the predictions are away from the actual model
 
 ---
 
-# Assessing model accuarcy
+# Assessing model accuracy
 
-Remember how *residuals squared sum* (RSS) depended on the number of of observations?
+Remember how *residuals squared sum* (RSS) depended on the number of observations?
 
 --
 
@@ -427,13 +457,13 @@ $$ RSE = \sqrt{\dfrac{1}{n-2} RSS} = \sqrt{\dfrac{1}{n-2} \sum\limits^n_{i=1}(y_
 
 Interpretation:
 
-&gt; RSE is the average amounnt that the response will deviate from the true regression line
+&gt; RSE is the average amount that the response will deviate from the true regression line
 
 RSE measures the lack of fit. Smaller values are better
 
 ---
 
-# Assessing model accuarcy
+# Assessing model accuracy
 
 $$ R^2 = 1 - \dfrac{RSS}{TSS}$$
 
@@ -447,7 +477,7 @@ takes values between 0 and 1, higher being better
 
 ---
 
-# Multiple linnear regression
+# Multiple linear regression
 
 This is a simple extension, 
 
@@ -461,21 +491,21 @@ All the previous questions apply here with slightly different answers
 
 When `\(p=1\)` we have the question
 
-&gt; Is there an assosiation between Y and X
+&gt; Is there an association between Y and X
 
 but when `\(p&gt;1\)` then question becomes
 
-&gt; Is at least one of the predictors `\(X_1, X_2, ..., X_p\)` usefull in predicting the response
+&gt; Is at least one of the predictors `\(X_1, X_2, ..., X_p\)` useful in predicting the response
 
 and 
 
-&gt; Which of the X's have an assosiation with Y
+&gt; Which of the X's have an association with Y
 
 ---
 
 # F statistics
 
-&gt; Is at least one of the predictors `\(X_1, X_2, ..., X_p\)` usefull in predicting the response
+&gt; Is at least one of the predictors `\(X_1, X_2, ..., X_p\)` useful in predicting the response
 
 $$  F = \dfrac{(TSS-RSS)/p}{RSS/(n-p-1)}  $$
 
@@ -491,7 +521,7 @@ If F-statistic is close to 1 then we suspect there is no relationship between th
 
 ---
 
-# qualitative predictors
+# Qualitative predictors
 
 We will come back to this later
 
@@ -499,7 +529,7 @@ We will come back to this later
 
 # Model assumptions 
 
-Linear model works well in a lot of cases.
+The linear model works well in a lot of cases.
 
 But there are assumptions
 
@@ -525,10 +555,10 @@ If the error terms are correlated, we may have an unwarranted sense of confidenc
 You should be careful to throw out data that does not fit well into your model
 
 - Don't remove points because they result in a bad fit
-- Remove data if if they are wrongly collected
+- Remove data if they are wrongly collected
 - Consider using a model that isn't affected much by outliers
 
-domain, linear models perform bad if some of the observations are FAR away from the other points
+domain, linear models perform badly if some of the observations are FAR away from the other points
 
 ---
 
@@ -607,7 +637,7 @@ fit_lm
 ```
 ## parsnip model object
 ## 
-## Fit time:  4ms 
+## Fit time:  1ms 
 ## 
 ## Call:
 ## stats::lm(formula = mpg ~ disp + drat + qsec, data = data)
