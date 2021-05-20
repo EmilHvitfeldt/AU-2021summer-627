@@ -5,7 +5,7 @@ description: |
   Statistical Machine Learning
 output_dir: "docs"
 include: ["Readings"]
-exclude: ["papers.Rmd"]
+exclude: ["papers.Rmd", "DESCRIPTION", "renv.lock"]
 navbar:
   right:
     - text: "Syllabus"
