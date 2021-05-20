@@ -46,7 +46,7 @@ week_days <- function(x) {
 
 `r week_days(1)`
 
-`r assignments("week1")`
+`r assignments("01")`
 
 ### Monday 5-17
 
@@ -68,7 +68,7 @@ Topics: Linear regression, Regression
 
 `r week_days(2)`
 
-`r assignments("week2")`
+`r assignments("02")`
 
 ### Monday 5-24
 
@@ -90,7 +90,7 @@ Topics: LDA, QDA, K-Nearest Neighbors
 
 `r week_days(3)`
 
-`r assignments("week3")`
+`r assignments("03")`
 
 ### Wednesday 6-02
 
@@ -112,7 +112,7 @@ Topics: Feature Engineering, Data Preprocessing, Clustering, K-Means Clustering,
 
 `r week_days(4)`
 
-`r assignments("week4")`
+`r assignments("04")`
 
 ### Monday 6-07
 
@@ -134,7 +134,7 @@ Topics: Shrinkage Methods, Rigde, Lasso, Hyper Parameter Tuning
 
 `r week_days(5)`
 
-`r assignments("week5")`
+`r assignments("05")`
 
 ### Monday 6-14
 
