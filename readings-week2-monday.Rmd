@@ -20,4 +20,4 @@ The reading labs for chapter 4 can be found [here](https://emilhvitfeldt.github.
 xaringanExtra::embed_xaringan(url = "static/slides/week2-monday/index.html", ratio = "16:9")
 ```
 
-[PDF download](static/slides/week2-monday/week1-monday.pdf) [Full Screen](static/slides/week2-monday/index.html)
+[PDF download](static/slides/week2-monday/week2-monday.pdf) [Full Screen](static/slides/week2-monday/index.html)
