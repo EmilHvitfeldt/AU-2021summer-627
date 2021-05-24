@@ -21,6 +21,10 @@ navbar:
           href: readings-week1-monday.html
         - text: "Week 1 - Wednesday"
           href: readings-week1-wednesday.html
+        - text: "Week 2 - Monday"
+          href: readings-week2-monday.html
+        - text: "Week 2 - Wednesday"
+          href: readings-week2-wednesday.html
     - text: "Labs"
       menu:
         - text: "Information"
