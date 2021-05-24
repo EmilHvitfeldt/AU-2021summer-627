@@ -85,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Statistical Machine Learning: Week 2 - Monday</title>
+  <title>Statistical Machine Learning: Week 2 - Wednesday</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Statistical Machine Learning: Week 2 - Monday"/>
+  <meta property="og:title" content="Statistical Machine Learning: Week 2 - Wednesday"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Statistical Machine Learning"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Statistical Machine Learning: Week 2 - Monday"/>
+  <meta property="twitter:title" content="Statistical Machine Learning: Week 2 - Wednesday"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Week 2 - Monday"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","params"]}},"value":[{"type":"character","attributes":{},"value":["Week 2 - Wednesday"]},{"type":"character","attributes":{},"value":["LDA, QDA and KNNs"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["solutions"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2355,7 +2355,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Week 2 - Monday","authors":[]}
+{"title":"Week 2 - Wednesday","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2421,7 +2421,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Week 2 - Monday</h1>
+<h1>Week 2 - Wednesday</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2429,9 +2429,21 @@ Assignments
 
 
 <div class="d-article">
-<p>Start read chapter 4 of “An Introduction to Statistical Learning”, we will color 4.1, 4.2, and 4.3. This chapter covers logistic regression, linear discriminant analysis, and quadratic discriminant analysis. We will start by talking about logistic regression this week and talk about linear discriminant analysis and quadratic discriminant analysis on Wednesday. Furthermore, this is the first we will be talking about classification methods, take note of the differences between this and regression.</p>
-<p>We will also talk about the notion of data splitting or “train-test splitting”. Please read the 5th chapter of “Tidy Modeling with R” which can be found <a href="https://www.tmwr.org/splitting.html">here</a>.</p>
-<p>The reading labs for chapter 4 can be found <a href="https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/classification.html">here</a></p>
+<p>We will be using the add-on package <a href="https://discrim.tidymodels.org/">discrim</a> to access functions to perform discriminant analysis models with parsnip and the <code>klaR</code> package to perform the QDA calculations. if you haven’t already got it installed run</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"discrim"</span>, <span class='st'>"klaR"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Create a test-train <code>rsplit</code> object of <code>mlc_churn</code> using <code>initial_split()</code>. Use the arguments to set the proportions of the training data to be 80%. Stratify the sampling according to the <code>churn</code> variable.</p>
+<p>Do the following tasks for LDA, QDA and KNN model.</p>
+<ol type="a">
+<li>Fit a classification model. Use <code>number_vmail_messages</code>, <code>total_intl_minutes</code>, <code>total_intl_calls</code>, <code>total_intl_charge</code>, <code>number_customer_service_calls</code> as predictors. Remember to fit the model only using the training data set.</li>
+<li>Inspect the model with <code>summary()</code> and <code>tidy()</code>. How good are the variables we have chosen?</li>
+<li>Predict values for the testing data set.</li>
+<li>Use <code>conf_mat()</code> to construct a confusion matrix. Does the confusion matrix look good?</li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

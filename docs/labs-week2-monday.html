@@ -104,7 +104,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Week 2 - Monday"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","params"]}},"value":[{"type":"character","attributes":{},"value":["Week 2 - Monday"]},{"type":"character","attributes":{},"value":["Logistic Regression and Data Splitting"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["solutions"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2429,9 +2429,33 @@ Assignments
 
 
 <div class="d-article">
-<p>Start read chapter 4 of “An Introduction to Statistical Learning”, we will color 4.1, 4.2, and 4.3. This chapter covers logistic regression, linear discriminant analysis, and quadratic discriminant analysis. We will start by talking about logistic regression this week and talk about linear discriminant analysis and quadratic discriminant analysis on Wednesday. Furthermore, this is the first we will be talking about classification methods, take note of the differences between this and regression.</p>
-<p>We will also talk about the notion of data splitting or “train-test splitting”. Please read the 5th chapter of “Tidy Modeling with R” which can be found <a href="https://www.tmwr.org/splitting.html">here</a>.</p>
-<p>The reading labs for chapter 4 can be found <a href="https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/classification.html">here</a></p>
+<p>These sets of labs will introduce you to logistic regression. This will also be your first introduction to the <a href="https://rsample.tidymodels.org/">rsample</a> package which we will use to perform train-test split.</p>
+<h1 id="exercise-1">Exercise 1</h1>
+<p>In this exercise we will explore the <code>mlc_churn</code> data set included in tidymodels.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"mlc_churn"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>The data set contains a variable called <code>churn</code></p>
+<ol type="a">
+<li><p>Create a test-train <code>rsplit</code> object of <code>mlc_churn</code> using <code>initial_split()</code>. Use the arguments to set the proportions of the training data to be 80%. Stratify the sampling according to the <code>churn</code> variable. How many observations are in the testing and training sets?</p></li>
+<li><p>Create the training and testing data set with <code>training()</code> and <code>testing()</code> respectively. Does the observation counts match what you found in the last question?</p></li>
+<li><p>Fit a logistic regression model using <code>logistic_reg()</code>. Use <code>number_vmail_messages</code>, <code>total_intl_minutes</code>, <code>total_intl_calls</code>, <code>total_intl_charge</code>, <code>number_customer_service_calls</code> as predictors. Remember to fit the model only using the training data set.</p></li>
+<li><p>Inspect the model with <code>summary()</code> and <code>tidy()</code>. How good are the variables we have chosen?</p></li>
+<li><p>Predict values for the testing data set. Use the <code>type</code> argument to also get probability predictions.</p></li>
+<li><p>Use <code>conf_mat()</code> to construct a confusion matrix. Does the confusion matrix look good?</p></li>
+</ol>
+<p><code>conf_mat()</code> is used as follows, where <code>truth</code> is the name of the true response variable and <code>estimate</code> is the name of the predicted response.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>conf_mat</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>estimate</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
