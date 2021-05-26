@@ -1,0 +1,12 @@
+---
+title: "Week 5 - Monday"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+We will be talking about splines and Generalized additive models (GAM). Please read chapter 7 in "An Introduction to Statistical Learning". We will mostly be focusinng on splines and the other non-linear transformations.
+
+The tidymodels lab sections can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/moving-beyond-linearity.html).
+

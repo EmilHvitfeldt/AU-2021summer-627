@@ -25,6 +25,22 @@ navbar:
           href: readings-week2-monday.html
         - text: "Week 2 - Wednesday"
           href: readings-week2-wednesday.html
+        - text: "Week 3 - Wednesday"
+          href: readings-week3-wednesday.html
+        - text: "Week 3 - Saturday"
+          href: readings-week3-saturday.html
+        - text: "Week 4 - Monday"
+          href: readings-week4-monday.html
+        - text: "Week 4 - Wednesday"
+          href: readings-week4-wednesday.html
+        - text: "Week 5 - Monday"
+          href: readings-week5-monday.html
+        - text: "Week 5 - Wednesday"
+          href: readings-week5-wednesday.html
+        - text: "Week 6 - Monday"
+          href: readings-week6-monday.html
+        - text: "Week 6 - Wednesday"
+          href: readings-week6-wednesday.html
     - text: "Labs"
       menu:
         - text: "Information"

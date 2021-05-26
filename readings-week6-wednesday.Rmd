@@ -1,0 +1,9 @@
+---
+title: "Week 6 - Wednesday"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+There will not be any reading for this lecture. Today will be dedicated to student presentation for final projects.
