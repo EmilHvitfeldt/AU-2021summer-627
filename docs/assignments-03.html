@@ -85,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Statistical Machine Learning: Labs - Week 2</title>
+  <title>Statistical Machine Learning: Assignment 4</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Statistical Machine Learning: Labs - Week 2"/>
+  <meta property="og:title" content="Statistical Machine Learning: Assignment 4"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Statistical Machine Learning"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Statistical Machine Learning: Labs - Week 2"/>
+  <meta property="twitter:title" content="Statistical Machine Learning: Assignment 4"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","params"]}},"value":[{"type":"character","attributes":{},"value":["Labs - Week 2"]},{"type":"character","attributes":{},"value":["Simple and multiple linear regression"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["solutions"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 4"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2355,7 +2355,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Labs - Week 2","authors":[]}
+{"title":"Assignment 4","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2430,7 +2430,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Labs - Week 2</h1>
+<h1>Assignment 4</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2438,27 +2438,132 @@ Assignments
 
 
 <div class="d-article">
-<p>These sets of labs will introduce you to linear models. Both simple and multiple. This will also be your first introduction to the <a href="https://parsnip.tidymodels.org/">parsnip</a> package which we will use to specify models.</p>
-<h3 id="exercise-1---simple-linear-regression">Exercise 1 - Simple linear regression</h3>
+<h1 id="exercise-1-10-points">Exercise 1 (10 points)</h1>
+<p>Review of <em>k</em>-fold cross-validation.</p>
 <ol type="a">
-<li>Load the data <code>biomass</code> and plot <code>HHV</code> as a function of <code>carbon</code>.</li>
+<li>Explain how <em>k</em>-fold cross-validation is implemented.</li>
+<li>What are the advantages and disadvantages of <em>k</em>-fold cross-validation relative to
+<ul>
+<li>The validation set approach</li>
+<li>LOOCV</li>
+</ul></li>
 </ol>
+<h1 id="exercise-2-10-points">Exercise 2 (10 points)</h1>
+<p>Denote whether the following statements are true or false. Explain your reasoning.</p>
+<ol type="a">
+<li>When <span class="math inline">\(k = n\)</span> the cross-validation estimator is approximately unbiased for the true prediction error.</li>
+<li>When <span class="math inline">\(k = n\)</span> the cross-validation estimator will always have a low variance.</li>
+<li>Statistical transformations on the predictors, such as scaling and centering, must be done inside each fold.</li>
+</ol>
+<h1 id="exercise-3-20-points">Exercise 3 (20 points)</h1>
+<p>This exercise should be answered using the <code>Weekly</code> data set, which is part of the <code>LSLR</code> package. If you don’t have it installed already you can install it with</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"biomass"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"ISLR"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<ol start="2" type="a">
-<li><p>Fit a simple linear regression model to the data. With <code>HHV</code> as the response and <code>carbon</code> as the predictor. Is it a good fit?</p></li>
-<li><p>Use the model to predict what the <code>HHV</code> of samples with <code>carbon = 10, 20, ..., 80</code>.</p></li>
-<li><p>Produce diagnostics plots. You can use <code>plot()</code> on the <code>$fit</code> object to produce some diagnostics.</p></li>
-</ol>
-<h3 id="exercise-2---multiple-linear-regression">Exercise 2 - Multiple linear regression</h3>
+<p>To load the data set run the following code</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://www.StatLearning.com'>ISLR</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"Weekly"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
 <ol type="a">
-<li><p>Fit a linear regression model to the data. With <code>HHV</code> as the response and <code>carbon</code> and <code>hydrogen</code> as the predictor. How is the fit compared to the simple linear model?</p></li>
-<li><p>Fit a linear regression model to the data. With <code>HHV</code> as the response and all the molecules as the predictor. How is the fit compared to the previous models?</p></li>
+<li>Create a test and training set using <code>initial_split()</code>. Split proportion is up to you. Remember to set a seed!</li>
+<li>Create a logistic regression specification using <code>logistic_reg()</code>. Set the engine to <code>glm</code>.</li>
+<li>Create a 5-fold cross-validation object using the training data, and fit the resampled folds with <code>fit_resamples()</code> and <code>Direction</code> as the response and the five lag variables plus <code>Volume</code> as predictors. Remember to set a seed before creating k-fold object.</li>
+<li>Collect the performance metrics using <code>collect_metrics()</code>. Interpret.</li>
+<li>Fit the model on the whole training data set. Calculate the accuracy on the test set. How does this result compare to results in d. Interpret.</li>
+</ol>
+<h1 id="exercise-4-15-points">Exercise 4 (15 points)</h1>
+<p>We will now derive the probability that a given observation is part of a bootstrap sample. Suppose that we obtain a bootstrap sample from a set of <span class="math inline">\(n\)</span> observations.</p>
+<ol type="a">
+<li>What is the probability that the first bootstrap observation is <em>not</em> the <span class="math inline">\(j\)</span>th observation from the original sample? Justify your answer.</li>
+<li>What is the probability that the second bootstrap observation is <em>not</em> the <span class="math inline">\(j\)</span>th observation from the original sample? Justify your answer.</li>
+<li>Argue that the probability that the <span class="math inline">\(j\)</span>th observation is <em>not</em> in the bootstrap sample is <span class="math inline">\((1-1/n)^n\)</span>.</li>
+<li>When <span class="math inline">\(n = 5\)</span> what is the probability that the <span class="math inline">\(j\)</span>th observation is in the bootstrap sample?</li>
+<li>When <span class="math inline">\(n = 100\)</span> what is the probability that the <span class="math inline">\(j\)</span>th observation is in the bootstrap sample?</li>
+<li>When <span class="math inline">\(n = 10,000\)</span> what is the probability that the <span class="math inline">\(j\)</span>th observation is in the bootstrap sample?</li>
+<li>Create a plot that displays, for each integer value of <span class="math inline">\(n\)</span> from 1 to 100,000 the probability that the <span class="math inline">\(j\)</span>th observation is in the bootstrap sample. Comment on what you observe.</li>
+<li>We will now investigate numerically that a bootstrap sample of size <span class="math inline">\(n = 100\)</span> contains the <span class="math inline">\(j\)</span>th observation. Here <span class="math inline">\(j = 4\)</span>. We repeatedly create bootstrap samples, and each time we record whether or not the fourth observation is contained in the bootstrap sample.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span>  <span class='op'>)</span> <span class='co'># set a seed here</span>
+
+<span class='va'>store</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>integer</a></span><span class='op'>(</span><span class='fl'>10000</span><span class='op'>)</span>
+
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_along</a></span><span class='op'>(</span><span class='va'>store</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>store</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>100</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>4</span><span class='op'>)</span> <span class='op'>&gt;</span> <span class='fl'>0</span>
+<span class='op'>}</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>store</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Comment on the results obtained.</p>
+<h1 id="exercise-5-10-points">Exercise 5 (10 points)</h1>
+<p>Suppose that we use some statistical learning method to make a prediction for the response <span class="math inline">\(Y\)</span> for a particular value of the predictor <span class="math inline">\(X\)</span>.</p>
+<ol type="a">
+<li>Carefully describe how we might estimate the standard deviation of our prediction.</li>
+<li>Is this procedure depends on what statistical learning method we are using?</li>
+</ol>
+<h1 id="exercise-6-15-points">Exercise 6 (15 points)</h1>
+<p>This exercise should be answered using the <code>Default</code> data set, which is part of the <code>LSLR</code> package. If you don’t have it installed already you can install it with</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"ISLR"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>To load the data set run the following code</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://www.StatLearning.com'>ISLR</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"Default"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<ol type="a">
+<li>Use the <code>parsnip</code> package to fit a logistic regression on the <code>default</code> data set. <code>default</code> is the response and <code>income</code> and <code>balance</code> are the predictors. Then use <code>summary()</code> on the fitted model to determine the estimated standard errors for the coefficients associated with <code>income</code> and <code>balance</code>. Comment on the estimated standard errors.</li>
+<li>Use the <code>bootstraps()</code> function from the <code>rsample</code> package to generate 25 bootstraps of <code>Default</code>.</li>
+<li>Run the following code. Change <code>boots</code> to the name of the bootstrapping object created in the previous question. This will take a minute or two to run. Comment on</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># This function takes a `bootstrapped` split object, and fits a logistic model</span>
+<span class='va'>fit_lr_on_bootstrap</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>split</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='fu'>logistic_reg</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>set_engine</span><span class='op'>(</span><span class='st'>"glm"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>set_mode</span><span class='op'>(</span><span class='st'>"classification"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>fit</span><span class='op'>(</span><span class='va'>default</span> <span class='op'>~</span> <span class='va'>income</span> <span class='op'>+</span> <span class='va'>balance</span>, <span class='fu'>analysis</span><span class='op'>(</span><span class='va'>split</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+<span class='co'># This code uses `map()` to run the model inside each split. Then it used</span>
+<span class='co'># `tidy()` to extract the model estimates the parameter</span>
+<span class='va'>boot_models</span> <span class='op'>&lt;-</span>
+  <span class='va'>boots</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>model <span class='op'>=</span> <span class='fu'>map</span><span class='op'>(</span><span class='va'>splits</span>, <span class='va'>fit_lr_on_bootstrap</span><span class='op'>)</span>,
+         coef_info <span class='op'>=</span> <span class='fu'>map</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>tidy</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'># This code extract the estimates for each model that was fit</span>
+<span class='va'>boot_coefs</span> <span class='op'>&lt;-</span>
+  <span class='va'>boot_models</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>unnest</span><span class='op'>(</span><span class='va'>coef_info</span><span class='op'>)</span>
+
+<span class='co'># This code calculates the standard deviation of the estimate</span>
+<span class='va'>sd_estimates</span> <span class='op'>&lt;-</span> <span class='va'>boot_coefs</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>term</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>std.error_est <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>estimate</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>sd_estimates</span>
+</code></pre>
+</div>
+</div>
+<ol type="a">
+<li>Comment on the estimated standard errors obtained using the <code>summary()</code> function on the first model and the estimated standard errors you found using the above code.</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
@@ -2468,6 +2573,15 @@ Assignments
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
