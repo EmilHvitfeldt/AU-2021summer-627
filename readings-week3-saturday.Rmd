@@ -11,4 +11,18 @@ Also read the article [K-means clustering with tidy data principles](https://www
 
 The accompanied tidymodels labs can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/unsupervised-learning.html).
 
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week3-saturday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week3-saturday/week3-saturday.pdf) [Full Screen](static/slides/week3-saturday/index.html)
+
+
+```{r embed-xaringan2, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week3-recipes/index.html", ratio = "16:9")
+```
+
+[Full Screen](static/slides/week3-recipes/index.html)
 
