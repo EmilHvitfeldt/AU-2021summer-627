@@ -56,6 +56,8 @@ navbar:
           href: labs-week2-wednesday.html
         - text: "Week 3 - Wednesday"
           href: labs-week3-wednesday.html
+        - text: "Week 3 - Saturday"
+          href: labs-week3-saturday.html
     - text: "Assignments"
       menu:
         - text: "Information"
