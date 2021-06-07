@@ -2,7 +2,7 @@
 title: "Shrinkage Methods and Hyperparameter tunning"
 subtitle: "AU STAT627"
 author: "Emil Hvitfeldt"
-date: "2021-03-23"
+date: "2021-06-09"
 output:
   xaringan::moon_reader:
     css: ["theme.css", "default"]
@@ -21,7 +21,7 @@ output:
 
 # Shrinkage Methods
 
-We saw last week how PCA can be used as a dimensionality reduction method
+We saw last Monday how PCA can be used as a dimensionality reduction method
 
 This can help us deal with data sets with many variables, high dimensional data
 
@@ -170,7 +170,7 @@ biomass_scaled
 A Ridge regression model specification can be specified using `linear_reg()` with `mixture = 0`
 
 ```{r}
-ridge_spec <- linear_reg(mixture = 0) %>%
+ridge_spec <- linear_reg(mixture = 0, penalty = 0) %>%
   set_engine("glmnet")
 ```
 
@@ -192,8 +192,6 @@ plot(ridge_fit$fit, xvar = "lambda")
 ---
 
 # Predicting for a Ridge Regression model
-
-We cannot predict directly on a fitted Ridge model because we need to specify the penalty
 
 ```{r, error=TRUE}
 predict(ridge_fit, new_data = biomass_scaled)
@@ -232,7 +230,7 @@ predict(ridge_fit, new_data = biomass_scaled)
 Fitting a lasso model is done the same way a ridge model is fit, instead, we have to set `mixture = 1`
 
 ```{r}
-lasso_spec <- linear_reg(mixture = 1) %>%
+lasso_spec <- linear_reg(mixture = 1, penalty = 0) %>%
   set_engine("glmnet")
 
 lasso_fit <- lasso_spec %>%

@@ -4,7 +4,7 @@
     <title>Shrinkage Methods and Hyperparameter tunning</title>
     <meta charset="utf-8" />
     <meta name="author" content="Emil Hvitfeldt" />
-    <meta name="date" content="2021-03-23" />
+    <meta name="date" content="2021-06-09" />
     <script src="libs/header-attrs-2.6.6/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="theme.css" type="text/css" />
@@ -16,7 +16,7 @@ class: center, middle, title-slide
 # Shrinkage Methods and Hyperparameter tunning
 ## AU STAT627
 ### Emil Hvitfeldt
-### 2021-03-23
+### 2021-06-09
 
 ---
 
@@ -57,7 +57,7 @@ MathJax.Hub.Config({
 
 # Shrinkage Methods
 
-We saw last week how PCA can be used as a dimensionality reduction method
+We saw last Monday how PCA can be used as a dimensionality reduction method
 
 This can help us deal with data sets with many variables, high dimensional data
 
@@ -226,7 +226,7 @@ A Ridge regression model specification can be specified using `linear_reg()` wit
 
 
 ```r
-ridge_spec &lt;- linear_reg(mixture = 0) %&gt;%
+ridge_spec &lt;- linear_reg(mixture = 0, penalty = 0) %&gt;%
   set_engine("glmnet")
 ```
 
@@ -253,15 +253,26 @@ plot(ridge_fit$fit, xvar = "lambda")
 
 # Predicting for a Ridge Regression model
 
-We cannot predict directly on a fitted Ridge model because we need to specify the penalty
-
 
 ```r
 predict(ridge_fit, new_data = biomass_scaled)
 ```
 
 ```
-## Error: `penalty` should be a single numeric value. `multi_predict()` can be used to get multiple predictions per row of data.
+## # A tibble: 536 x 1
+##      .pred
+##      &lt;dbl&gt;
+##  1  0.106 
+##  2  0.0993
+##  3 -0.0543
+##  4 -0.337 
+##  5 -0.157 
+##  6 -0.262 
+##  7 -0.0995
+##  8 -0.220 
+##  9  0.0167
+## 10 -0.0916
+## # … with 526 more rows
 ```
 
 ---
@@ -334,7 +345,7 @@ Fitting a lasso model is done the same way a ridge model is fit, instead, we hav
 
 
 ```r
-lasso_spec &lt;- linear_reg(mixture = 1) %&gt;%
+lasso_spec &lt;- linear_reg(mixture = 1, penalty = 0) %&gt;%
   set_engine("glmnet")
 
 lasso_fit &lt;- lasso_spec %&gt;%
@@ -452,7 +463,7 @@ lambda_grid
 ## # A tibble: 50 x 1
 ##     penalty
 ##       &lt;dbl&gt;
-##  1 1.00e-10
+##  1 1   e-10
 ##  2 1.60e-10
 ##  3 2.56e-10
 ##  4 4.09e-10
@@ -495,16 +506,16 @@ collect_metrics(tune_rs)
 ## # A tibble: 100 x 7
 ##     penalty .metric .estimator  mean     n std_err .config              
 ##       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;                
-##  1 1.00e-10 rmse    standard   1.14      5  0.113  Preprocessor1_Model01
-##  2 1.00e-10 rsq     standard   0.901     5  0.0139 Preprocessor1_Model01
-##  3 1.60e-10 rmse    standard   1.14      5  0.113  Preprocessor1_Model02
-##  4 1.60e-10 rsq     standard   0.901     5  0.0139 Preprocessor1_Model02
-##  5 2.56e-10 rmse    standard   1.14      5  0.113  Preprocessor1_Model03
-##  6 2.56e-10 rsq     standard   0.901     5  0.0139 Preprocessor1_Model03
-##  7 4.09e-10 rmse    standard   1.14      5  0.113  Preprocessor1_Model04
-##  8 4.09e-10 rsq     standard   0.901     5  0.0139 Preprocessor1_Model04
-##  9 6.55e-10 rmse    standard   1.14      5  0.113  Preprocessor1_Model05
-## 10 6.55e-10 rsq     standard   0.901     5  0.0139 Preprocessor1_Model05
+##  1 1   e-10 rmse    standard   1.53      5  0.258  Preprocessor1_Model01
+##  2 1   e-10 rsq     standard   0.833     5  0.0455 Preprocessor1_Model01
+##  3 1.60e-10 rmse    standard   1.53      5  0.258  Preprocessor1_Model02
+##  4 1.60e-10 rsq     standard   0.833     5  0.0455 Preprocessor1_Model02
+##  5 2.56e-10 rmse    standard   1.53      5  0.258  Preprocessor1_Model03
+##  6 2.56e-10 rsq     standard   0.833     5  0.0455 Preprocessor1_Model03
+##  7 4.09e-10 rmse    standard   1.53      5  0.258  Preprocessor1_Model04
+##  8 4.09e-10 rsq     standard   0.833     5  0.0455 Preprocessor1_Model04
+##  9 6.55e-10 rmse    standard   1.53      5  0.258  Preprocessor1_Model05
+## 10 6.55e-10 rsq     standard   0.833     5  0.0455 Preprocessor1_Model05
 ## # … with 90 more rows
 ```
 
@@ -539,13 +550,13 @@ tune_rs %&gt;%
 
 ```
 ## # A tibble: 5 x 7
-##   penalty .metric .estimator  mean     n std_err .config              
-##     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;                
-## 1 0.0373  rmse    standard    1.14     5   0.114 Preprocessor1_Model43
-## 2 0.0233  rmse    standard    1.14     5   0.113 Preprocessor1_Model42
-## 3 0.0146  rmse    standard    1.14     5   0.113 Preprocessor1_Model41
-## 4 0.0596  rmse    standard    1.14     5   0.116 Preprocessor1_Model44
-## 5 0.00910 rmse    standard    1.14     5   0.113 Preprocessor1_Model40
+##    penalty .metric .estimator  mean     n std_err .config              
+##      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;                
+## 1 1.46e- 2 rmse    standard    1.53     5   0.257 Preprocessor1_Model41
+## 2 2.33e- 2 rmse    standard    1.53     5   0.257 Preprocessor1_Model42
+## 3 9.10e- 3 rmse    standard    1.53     5   0.258 Preprocessor1_Model40
+## 4 1   e-10 rmse    standard    1.53     5   0.258 Preprocessor1_Model01
+## 5 1.60e-10 rmse    standard    1.53     5   0.258 Preprocessor1_Model02
 ```
 
 
@@ -566,16 +577,16 @@ lasso_wf
 ```
 
 ```
-## ══ Workflow ══════════════════════════════════════════════════════════════════════════════════
+## ══ Workflow ════════════════════════════════════════════════════════════════════
 ## Preprocessor: Recipe
 ## Model: linear_reg()
 ## 
-## ── Preprocessor ──────────────────────────────────────────────────────────────────────────────
+## ── Preprocessor ────────────────────────────────────────────────────────────────
 ## 1 Recipe Step
 ## 
-## ● step_normalize()
+## • step_normalize()
 ## 
-## ── Model ─────────────────────────────────────────────────────────────────────────────────────
+## ── Model ───────────────────────────────────────────────────────────────────────
 ## Linear Regression Model Specification (regression)
 ## 
 ## Main Arguments:
@@ -598,20 +609,20 @@ final_lasso
 ```
 
 ```
-## ══ Workflow ══════════════════════════════════════════════════════════════════════════════════
+## ══ Workflow ════════════════════════════════════════════════════════════════════
 ## Preprocessor: Recipe
 ## Model: linear_reg()
 ## 
-## ── Preprocessor ──────────────────────────────────────────────────────────────────────────────
+## ── Preprocessor ────────────────────────────────────────────────────────────────
 ## 1 Recipe Step
 ## 
-## ● step_normalize()
+## • step_normalize()
 ## 
-## ── Model ─────────────────────────────────────────────────────────────────────────────────────
+## ── Model ───────────────────────────────────────────────────────────────────────
 ## Linear Regression Model Specification (regression)
 ## 
 ## Main Arguments:
-##   penalty = 0.0372759372031494
+##   penalty = 0.0145634847750124
 ##   mixture = 1
 ## 
 ## Computational engine: glmnet
@@ -645,16 +656,16 @@ predict(fitted_lasso, biomass_test)
 ## # A tibble: 402 x 1
 ##    .pred
 ##    &lt;dbl&gt;
-##  1  19.7
-##  2  19.6
-##  3  19.0
-##  4  17.9
-##  5  18.6
-##  6  18.9
-##  7  19.3
-##  8  18.9
-##  9  20.2
-## 10  19.4
+##  1  19.1
+##  2  28.5
+##  3  22.1
+##  4  19.1
+##  5  19.2
+##  6  17.3
+##  7  18.3
+##  8  19.1
+##  9  19.4
+## 10  15.9
 ## # … with 392 more rows
 ```
 
