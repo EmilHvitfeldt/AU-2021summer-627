@@ -2,7 +2,7 @@
 title: "Principal Compoonents Analysis"
 subtitle: "AU STAT627"
 author: "Emil Hvitfeldt"
-date: "2021-03-16"
+date: "2021-06-07"
 output:
   xaringan::moon_reader:
     css: ["theme.css", "default"]
@@ -154,9 +154,7 @@ since we are working literately through the principal components, we can calcula
 
 the proportion of variance explained of the $m$th principal component is given by
 
-$$
-\dfrac{\sum_{i=1}^n \left( \sum_{j=1}^p \phi_{jm}x_{ij} \right)^2}{\sum_{j=1}^p\sum_{i=1}^n x_{ij}^2}
-$$
+$$\dfrac{\sum_{i=1}^n \left( \sum_{j=1}^p \phi_{jm}x_{ij} \right)^2}{\sum_{j=1}^p\sum_{i=1}^n x_{ij}^2}$$
 
 Don't worry, this is already calculated by the software you use to get PCA
 

@@ -11,3 +11,12 @@ We will continue the topic of pre-processing from last week and see how it relat
 [recipes](https://recipes.tidymodels.org/) will be introduces as the R package we will use to perform pre-processing. Please read [this vvignette](https://recipes.tidymodels.org/articles/Simple_Example.html) on introducing recipes. We will also talk about the  [workflows](https://workflows.tidymodels.org/), no reading required.
 
 The tidymodels lab sections can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/linear-model-selection-and-regularization.html#principal-components-regression) and [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/unsupervised-learning.html#principal-components-analysis).
+
+
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week4-monday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week4-monday/week4-monday.pdf) [Full Screen](static/slides/week4-monday/index.html)
