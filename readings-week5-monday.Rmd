@@ -10,3 +10,10 @@ We will be talking about splines and Generalized additive models (GAM). Please r
 
 The tidymodels lab sections can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/moving-beyond-linearity.html).
 
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week5-monday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week5-monday/week5-monday.pdf) [Full Screen](static/slides/week5-monday/index.html)

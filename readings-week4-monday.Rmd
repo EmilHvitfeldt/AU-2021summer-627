@@ -12,7 +12,6 @@ We will continue the topic of pre-processing from last week and see how it relat
 
 The tidymodels lab sections can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/linear-model-selection-and-regularization.html#principal-components-regression) and [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/unsupervised-learning.html#principal-components-analysis).
 
-
 ## Slides
 
 ```{r embed-xaringan, echo=FALSE, eval=TRUE}

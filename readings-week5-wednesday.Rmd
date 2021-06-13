@@ -9,3 +9,11 @@ knitr::opts_chunk$set(echo = TRUE)
 We will be talking about Decision trees, bagging, boosting and random forests. Please read chapter 8 in "An Introduction to Statistical Learning".
 
 The tidymodels lab sections can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/tree-based-methods.html).
+
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week5-wednesday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week5-wednesday/week5-wednesday.pdf) [Full Screen](static/slides/week5-wednesday/index.html)
