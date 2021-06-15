@@ -85,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Statistical Machine Learning: Week 5 - Monday</title>
+  <title>Statistical Machine Learning: Assignment 5</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Statistical Machine Learning: Week 5 - Monday"/>
+  <meta property="og:title" content="Statistical Machine Learning: Assignment 5"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Statistical Machine Learning"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Statistical Machine Learning: Week 5 - Monday"/>
+  <meta property="twitter:title" content="Statistical Machine Learning: Assignment 5"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle"]}},"value":[{"type":"character","attributes":{},"value":["Week 5 - Monday"]},{"type":"character","attributes":{},"value":["Trees and Forrests"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 5"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2355,7 +2355,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Week 5 - Monday","authors":[]}
+{"title":"Assignment 5","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2438,7 +2438,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Week 5 - Monday</h1>
+<h1>Assignment 5</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2446,14 +2446,26 @@ Assignments
 
 
 <div class="d-article">
-<p>We will be using this lab to explore decision trees and random forests using the <code>palmerpenguins</code> package. We will also use a couple of other packages such as <code>rpart.plot</code>, <code>rpart</code>, <code>ranger</code>, and <code>vip</code>.</p>
-<ol type="a">
-<li><p>Fit a decision tree using <code>decision_tree()</code>, and visualize the structure of the tree.</p></li>
-<li><p>Try different values of the hyperparameters for the tree and see how the shape of the tree changes.</p></li>
-<li><p>Use the <code>vip</code> package to showcase the variable importance.</p></li>
-<li><p>Fit a random forest model using <code>rand_forest()</code>. What Do you see in the output?</p></li>
-<li><p>Use the <code>vip</code> package to showcase the variable importance for the random forest.</p></li>
-</ol>
+<h1 id="exercise-1-10-points">Exercise 1 (10 points)</h1>
+<p>Suppose we fit a curve with basis functions <span class="math inline">\(b_1(X) = X\)</span>, <span class="math inline">\(B_2(X) = (X - 1)^2 I(X \geq 1)\)</span>. Note that <span class="math inline">\(I(X \geq 1)\)</span> equals 1 for <span class="math inline">\(X \geq 1\)</span> and 0 otherwise. We fit the linear regression model</p>
+<p><span class="math display">\[Y = \beta_0 + \beta_1b_1(X) + \beta_2b_2(X) + \varepsilon\]</span></p>
+<p>and obtain the coefficient estimates <span class="math inline">\(\hat \beta_0 = 1\)</span>, <span class="math inline">\(\hat \beta_1 = 1\)</span>, <span class="math inline">\(\hat \beta_2 = -2\)</span>. Sketch the estimated curve between <span class="math inline">\(X = -2\)</span> and <span class="math inline">\(X = 2\)</span>. Note the intercepts, slopes and other relevant information.</p>
+<h1 id="exercise-2-10-points">Exercise 2 (10 points)</h1>
+<p>Suppose we fit a curve with basis functions <span class="math inline">\(b_1(X) = I(0 \leq X \leq 2) - (X-1)I(1 \leq X \leq 2)\)</span>, <span class="math inline">\(B_2(X) = (X - 3) I(3 \leq X \leq 4) + I(4 &lt; X \leq 5)\)</span>. We fit the linear regression model</p>
+<p><span class="math display">\[Y = \beta_0 + \beta_1b_1(X) + \beta_2b_2(X) + \varepsilon\]</span></p>
+<p>and obtain the coefficient estimates <span class="math inline">\(\hat \beta_0 = 1\)</span>, <span class="math inline">\(\hat \beta_1 = 1\)</span>, <span class="math inline">\(\hat \beta_2 = 3\)</span>. Sketch the estimated curve between <span class="math inline">\(X = -2\)</span> and <span class="math inline">\(X = 2\)</span>. Note the intercepts, slopes and other relevant information.</p>
+<h1 id="exercise-3-10-points">Exercise 3 (10 points)</h1>
+<p>Explain what happens to the bias/variance trade-off of our model estimates use regression splines.</p>
+<h1 id="exercise-4-10-points">Exercise 4 (10 points)</h1>
+<p>Draw an example (of your own invention) of a partition of two-dimensional feature space that could result from recursive binary splitting. Your example should contain at least six regions. Draw a decision tree corresponding to this partition. Be sure to label all aspects of your figures, including regions <span class="math inline">\(R_1, R_2, ...\)</span>, the cut points <span class="math inline">\(t_1, t_2, ...\)</span>, and so forth.</p>
+<h1 id="exercise-5-10-points">Exercise 5 (10 points)</h1>
+<p>Provide a detailed explanation of the algorithm that is used to fit a regression tree.</p>
+<h1 id="exercise-6-10-points">Exercise 6 (10 points)</h1>
+<p>Explain the difference between bagging, boosting, and random forests.</p>
+<h1 id="exercise-7-20-points">Exercise 7 (20 points)</h1>
+<p>You will be using the Boston data found <a href="data/Boston.csv">here</a>. The response is <code>medv</code> and the remaining variables are predictors.</p>
+<p>Do test-training split as usual, and fit a random forest model or boosted tree (your choice) and a linear regression model.</p>
+<p>The random forest or boosted tree model has a selection of hyper-parameters that you can tune to improve performance. Perform hyperparameter tuning using k-fold cross-validation to find a model with good predictive power. How does this model compare to the linear regression model?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2462,6 +2474,15 @@ Assignments
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
