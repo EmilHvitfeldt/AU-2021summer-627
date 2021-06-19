@@ -9,3 +9,18 @@ knitr::opts_chunk$set(echo = TRUE)
 We will be talking about Support Vector Machines. Please read chapter 9 in "An Introduction to Statistical Learning".
 
 The tidymodels lab sections can be found [here](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/support-vector-machines.html).
+
+
+## Slides
+
+```{r embed-xaringan, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week6-monday/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week6-monday/week6-monday.pdf) [Full Screen](static/slides/week6-monday/index.html)
+
+```{r embed-xaringan2, echo=FALSE, eval=TRUE}
+xaringanExtra::embed_xaringan(url = "static/slides/week6-summary/index.html", ratio = "16:9")
+```
+
+[PDF download](static/slides/week6-summary/week6-summary.pdf) [Full Screen](static/slides/week6-summary/index.html)

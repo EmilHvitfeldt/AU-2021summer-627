@@ -2,7 +2,7 @@
 title: "Support Vector Machines"
 subtitle: "AU STAT627"
 author: "Emil Hvitfeldt"
-date: "2021-04-13"
+date: "2021-06-21"
 output:
   xaringan::moon_reader:
     css: ["theme.css", "default"]

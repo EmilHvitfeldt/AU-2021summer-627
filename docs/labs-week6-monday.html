@@ -85,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Statistical Machine Learning: Reference</title>
+  <title>Statistical Machine Learning: Week 5 - Monday</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Statistical Machine Learning: Reference"/>
+  <meta property="og:title" content="Statistical Machine Learning: Week 5 - Monday"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Statistical Machine Learning"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Statistical Machine Learning: Reference"/>
+  <meta property="twitter:title" content="Statistical Machine Learning: Week 5 - Monday"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Reference"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle"]}},"value":[{"type":"character","attributes":{},"value":["Week 5 - Monday"]},{"type":"character","attributes":{},"value":["SVM models"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2355,7 +2355,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Reference","authors":[]}
+{"title":"Week 5 - Monday","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2439,7 +2439,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Reference</h1>
+<h1>Week 5 - Monday</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2447,9 +2447,19 @@ Assignments
 
 
 <div class="d-article">
-<p>Various information links will be posted here as needed.</p>
-<h1 id="timer">Timer</h1>
-<p><a href="static/timer/index.html">15 minute timer</a></p>
+<p>In this lab, we will explore how to use SVM models. We will start by using the <code>Khan</code> data set from the <strong>ISLR</strong> package.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://www.StatLearning.com'>ISLR</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
+
+<span class='va'>Khan_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Khan</span><span class='op'>$</span><span class='va'>xtrain</span>, y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>Khan</span><span class='op'>$</span><span class='va'>ytrain</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>Khan_test</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Khan</span><span class='op'>$</span><span class='va'>xtest</span>, y <span class='op'>=</span> <span class='va'>Khan</span><span class='op'>$</span><span class='va'>ytest</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>We will fit a linear SVM on the training data set and predict the test data set. What do we expect the performance to be on the training and testing data set?</p>
+<p>Next, we will switch to the <code>Carseats</code> and try to predict whether a store is located in the US or not. We will tune some of the arguments to get a good fit.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

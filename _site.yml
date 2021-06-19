@@ -66,6 +66,8 @@ navbar:
           href: labs-week5-monday.html
         - text: "Week 5 - Wednesday"
           href: labs-week5-wednesday.html
+        - text: "Week 6 - Monday"
+          href: labs-week6-monday.html
     - text: "Assignments"
       menu:
         - text: "Information"
